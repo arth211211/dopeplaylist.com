@@ -1,0 +1,1327 @@
+<!DOCTYPE html><script>
+    document.querySelectorAll('.like-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('liked');
+        button.textContent = button.classList.contains('liked') ? "♥ Liked" : "♡ Like";
+      });
+    });
+  </script>
+  <button class="like-btn">♡ Like</button>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .like-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+.song {
+  position: relative;
+}
+
+.like-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.like-btn.liked {
+  background: white;
+  color: black;
+  transform: scale(1.2);
+}
+
+.like-btn.liked {
+  background: white;
+  color: black;
+  transform: scale(1.2);
+}
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            background-color: black;
+            color: white;
+        }
+        @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+}
+.like-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.like-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.like-btn.liked {
+  color: red;
+  transform: scale(1.2);
+}
+
+.like-btn.liked {
+  color: red;
+  transform: scale(1.2);
+}
+
+.playing {
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.lyrics-display {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+        header, footer, .song {
+            padding: 20px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+        .equalizer {
+  display: flex;
+  gap: 5px;
+}
+
+.equalizer div {
+  width: 5px;
+  height: 30px;
+  background: white;
+  animation: bounce 1s infinite alternate ease-in-out;
+}
+
+.equalizer div:nth-child(1) { animation-delay: 0s; }
+.equalizer div:nth-child(2) { animation-delay: 0.2s; }
+.equalizer div:nth-child(3) { animation-delay: 0.4s; }
+.equalizer div:nth-child(4) { animation-delay: 0.6s; }
+.equalizer div:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes bounce {
+  0% { transform: scaleY(0.5); }
+  100% { transform: scaleY(1.5); }
+}
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        @keyframes wave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: linear-gradient(45deg, #222, #444, #222);
+  background-size: 300% 300%;
+  animation: wave 10s infinite linear;
+}
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(255,255,255,0.3); }
+  50% { box-shadow: 0 0 15px rgba(255,255,255,0.6); }
+  100% { box-shadow: 0 0 5px rgba(255,255,255,0.3); }
+}
+
+.song.playing {
+  animation: glow 2s infinite alternate ease-in-out;
+}
+
+        .search-bar {
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        @keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.favorite-btn.liked {
+  animation: pop 0.3s ease-in-out;
+  color: red;
+}
+
+        .search-bar input {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #444;
+            color: white;
+            text-align: center;
+        }
+
+        .song {
+            background-color: #222;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            padding: 20px;
+        }
+        .song {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.song:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+}
+.progress-slider {
+  transition: width 0.5s ease-in-out;
+}
+
+        p {
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border-left: 5px solid white;
+            margin: 20px 0;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        audio {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+    <script>
+        function searchSong() {
+            let query = document.getElementById("search").value.toLowerCase();
+            let songs = document.getElementsByClassName("song");
+            for (let i = 0; i < songs.length; i++) {
+                let songTitle = songs[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
+                if (songTitle.includes(query)) {
+                    songs[i].style.display = "block";
+                } else {
+                    songs[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+  
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="toggleTheme()" id="themeButton"
+            style="padding: 10px 20px; font-size: 16px; background-color: #444; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Switch to Light Theme
+        </button>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.getElementById("themeButton");
+            body.classList.toggle("light-theme");
+           
+            function toggleLyrics(id) {
+  var lyricsDiv = document.getElementById(id);
+  if (lyricsDiv.style.display === "none" || lyricsDiv.style.display === "") {
+    lyricsDiv.style.display = "block";
+    lyricsDiv.style.animation = "fadeIn 0.5s ease-in-out";
+  } else {
+    lyricsDiv.style.display = "none";
+  }
+}
+document.querySelectorAll("audio").forEach((audio) => {
+  audio.addEventListener("play", function() {
+    audio.closest(".song").classList.add("playing");
+  });
+  
+  audio.addEventListener("pause", function() {
+    audio.closest(".song").classList.remove("playing");
+  });
+});
+
+audio.addEventListener("timeupdate", function() {
+  let progressPercent = (audio.currentTime / audio.duration) * 100;
+  progressSlider.style.width = progressPercent + "%";
+});
+
+            if (body.classList.contains("light-theme")) {
+                button.textContent = "Switch to Dark Theme";
+                button.style.backgroundColor = "#ddd";
+                button.style.color = "#000";
+            } else {
+                button.textContent = "Switch to Light Theme";
+                button.style.backgroundColor = "#444";
+                button.style.color = "#fff";
+            }
+        }
+        function fadeInAudio(audio) {
+  let volume = 0;
+  audio.volume = volume;
+  audio.play();
+  let fadeInterval = setInterval(() => {
+    if (volume < 1) {
+      volume += 0.05;
+      audio.volume = volume;
+    } else {
+      clearInterval(fadeInterval);
+    }
+  }, 200);
+}
+
+function fadeOutAudio(audio) {
+  let volume = audio.volume;
+  let fadeInterval = setInterval(() => {
+    if (volume > 0) {
+      volume -= 0.05;
+      audio.volume = volume;
+    } else {
+      clearInterval(fadeInterval);
+      audio.pause();
+    }
+  }, 200);
+}
+
+    </script>
+
+
+    <style>
+       @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.lyrics-display {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .light-theme header {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .light-theme footer {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .light-theme .song {
+            background-color: #f9f9f9;
+            color: black;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .light-theme .search-bar input,
+        .light-theme .search-bar button {
+            background-color: #eee;
+            color: black;
+            border: 1px solid #ccc;
+        }
+
+        .light-theme .search-bar button:hover {
+            background-color: #ddd;
+        }
+
+        .light-theme a {
+            color: black;
+        }
+
+        .light-theme a:hover {
+            color: #555;
+        }
+    </style>
+
+    <p><a href="LAMBINO_.html"></a></p>
+    <header>
+        <h1>SHANTI DOPE PLAYLIST</h1>
+    </header>
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Search for a song...">
+        <button onclick="searchSong()">Search</button>
+    </div>
+    <section>
+        <section>
+<script> document.querySelectorAll('.like-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      button.classList.toggle('liked');
+      button.textContent = button.classList.contains('liked') ? "♥ Liked" : "♡ Like";
+    });
+  });
+  </script> </section> </body>
+              
+              <style>
+                .songs-container {
+                    display: flex;
+                    flex-wrap: wrap; 
+                    gap: 20px; 
+                    justify-content: center; 
+                }
+            
+                .song {
+                    flex: 0 1 calc(33.33% - 20px); 
+                    box-sizing: border-box; 
+                    background-color: #222; 
+                    color: white;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+                }
+            
+                .song h2 {
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+            
+                .song audio {
+                    margin-top: 10px;
+                    width: 100%; 
+                }
+            
+                @media (max-width: 768px) {
+                    .song {
+                        flex: 0 1 calc(50% - 20px); 
+                    }
+                }
+                .like-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.like-btn.liked {
+  color: red;
+  transform: scale(1.2);
+}
+
+                @media (max-width: 480px) {
+                    .song {
+                        flex: 0 1 calc(100% - 20px); 
+                    }
+                }
+            </style>
+            
+            <div class="songs-container">
+                
+                
+                  
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>CITY GIRL</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>Released in 2022, a vibrant track showcasing urban life and rhythm.</p>
+                  <audio controls>
+                      <source src="z:\MIDTERM\New folder (2)\Shanti Dope - City Girl (Official Music Video).mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('cityGirlLyrics')">Show Lyrics</button>
+                  <div id="cityGirlLyrics" style="display: none;">
+                      <p>Unang gabi niya ko nakasama pagngiti<br>
+                        Sabi niya madami ka'ng babae oy hindi ah<br>
+                        Kasi sa ngayon ikaw ang gusto kong makita<br>
+                        Habang merong alak saking baso'ng malamig ah<br>
+
+                        Masaya pero pano kung wala ko'ng kaya<br>
+                        Tulad ng kasama mo'ng iba<br>
+                        'Wag ka padin sana mawala<br>
+
+                        Yung larawan mo tumatakbo hanggang sa panaginip<br>
+                        Alaala na naglalaro sa malikot na isip<br>
+                        May ibang nasa harap na<br>
+                        Ba't ikaw ang madalas naaalala pag wasak na'ko<br>
+                        Pwede bang sakin ka nalang ma<br>
+                        Sana 'wag ka magsasawang maalala<br>
+                        Kung ano yung ating nagawa sa<br>
+                        Unang araw mo ko nakilala<br>
+                      
+                        Pag kasama ko si Hellmerry<br>
+                        May kasama siyang isang bestie<br>
+                        Madalas tatlo kapag ready<br>
+                        Yung iba sabog lahat sexy<br>
+                        Yung isa na mas matanda pa sakin pero may dala-dala'ng candy<br>
+                        Nung ikaw kasama ang safe nasabi ko'ng sakin ka nalang baby<br>
+
+                        Unang gabi niya 'ko nakasama pagngiti<br>
+                        Nasabi niya madami ka'ng babae oy hidi ah<br>
+                        Kasi sa ngayon ikaw ang gusto ko makita<br>
+                        Habang merong alak saking baso'ng malamig ah<br>
+                        Sa isip mo lagi ako'ng may iba<br>
+
+                        Sa mga gabi'ng ako lang mag isa<br>
+                        Habang hindi ko padin malimutan<br>
+                        Na mas masaya kapag katabi ka<br>
+                        Ano man'g mangyare't maraming gawain tumawag ka lang ako'y parating na<br>
+                        Mundo'ng magulo na to natatakasan ko lamang sa kada kasama kita<br>
+
+                        Dami nilang sinasabi<br>
+                        Pero mas maniwala ka saken<br>
+                        Kasi nga iba na ko sa dati<br>
+                        Nung ikaw na kasama ko lagi<br>
+                        O kailangan kita di ko kaya gawin to ng ako lang din kung sakali<br>
+                        Kahit nakakapagod na din pumapawi kapag kagat mo ko sa labi<br>
+                      
+                        Magulo nakaraan ko di masabi sa harap mo<br>
+                        Andyan ka na isang tawag lang sayo'ng kama nabilanggo<br>
+                        Medyo bago lang lahat sakin parang di ako sanay sa ganto<br>
+                        Kasi kahit parang kaibigan lang kita ikaw na yung mahal ko<br>
+
+                        Masaya pero pano kung wala ko'ng kaya<br>
+                        Tulad ng kasama mo'ng iba<br>
+                        Wag ka pa din sana mawala<br>
+                        Yung larawan mo tumatakbo hanggang sa panaginip</p>
+                  </div>
+              </div>
+          
+              
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>NADARANG</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>A 2017 hit reflecting intense attraction and its consequences.</p>
+                  <audio controls>
+                      <source src="z:\MIDTERM\New folder (2)\Shanti Dope - Nadarang (Official Music Video)-yt.savetube.me.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('nadarangLyrics')">Show Lyrics</button>
+                  <div id="nadarangLyrics" style="display: none;">
+                      <p>Andiyan ka na naman<br>
+                        Ba't 'di ko maiwasang tumingin sa 'yong liwanag?<br>
+                        Nadarang na naman sa 'yong apoy<br>
+                        Bakit ba laging hinahayaan?<br>
+                      
+                        Andiyan ka na naman<br>
+                        Ba't 'di ko maiwasang tumingin sa 'yong liwanag?<br>
+                        Nadarang na naman sa 'yong apoy<br>
+                        Handang masaktan kung kinakailangan<br>
+                      
+                        May lakad ka ba mamaya?<br>
+                        Puwede ka ba makasama sa paggagala?<br>
+                        Kung sakaling 'di ka puwede<br>
+                        Sa bagay, mayro'n din akong ginagawa<br>
+                        Siguro nga, napapaisip ka<br>
+                        Ba't ako nangangamusta?<br>
+                        Ilang araw ka nang naroon sa panaginip ko<br>
+                        Nag-aalala lang ako, baka sa'n ka mapunta<br>
+                      
+                        Pero mukhang ayos ka naman<br>
+                        Kahit 'di na kita abalahin pa<br>
+                        Ilang "Ama Namin" pa ba ang dapat<br>
+                        Para patago kang mag-alala sa 'kin? Uh<br>
+                        Habang pinapantasya lamang nila<br>
+                        Ay maskara mo sa gabi at pitaka mo sa umaga<br>
+                        'Yung "ikaw" sa likod ng kolorete pa din<br>
+                        Ang nangangahulugan sa salitang "paraiso" para sa 'kin<br>
+                      
+                        Bakit kaya kayamanan ko pa din kinikilala ang iyong pagtawa?<br>
+                        Kahit na sa puso mo man ay ilang dosena na din ang kasya<br>
+                        Dati pa 'ko pinagdamutan ng kapalaran<br>
+                        Kaya 'di na bago sa 'kin mawalan ng pag-asa<br>
+                        Ala-una ng umaga na naman<br>
+                        Tawagan mo na lang ulit ako kapag hindi na kayo magkasama<br>
+                      
+                        Andiyan ka na naman<br>
+                        Ba't 'di ko maiwasang tumingin sa 'yong liwanag?<br>
+                        Nadarang na naman sa 'yong apoy<br>
+                        Bakit ba laging hinahayaan?<br>
+                      
+                        Andiyan ka na naman<br>
+                        Ba't 'di ko maiwasang tumingin sa 'yong liwanag?<br>
+                        Nadarang na naman sa 'yong apoy<br>
+                        Handang masaktan kung kinakailangan<br>
+                      
+                        May lakad ka ba mamaya?<br>
+                        Sana madaanan mo 'ko pagkatapos<br>
+                        Sabihin mo ngayong ako'y makakaasang<br>
+                        Dito ka dadalhin ng iyong sapatos<br>
+                        Kung ngayong gabi lang naman ang magiging dahilan<br>
+                        Ay handang-handa pa din naman ako mamaos<br>
+                        Makakaluwag ka man ay sa mas nakakalibang<br>
+                        Na paraan kita tutulungan makaraos<br>
+                      
+                        Bakit ka nagparamdam?<br>
+                        Siguro, 'di na kayo nilanggam<br>
+                        Bakit kaya 'di n'ya alam<br>
+                        Ang 'yong halaga't kung gaano ka kalinamnam?<br>
+                        Iniwasan ko mang matakam nang 'di halata<br>
+                        Ang hirap nang magpabaya<br>
+                        Kapag tawag na ng laman ang nagbadya<br>
+                        Makipaglangit-lupa nang walang taya<br>
+                      
+                        Mata sa mata, bibig sa bibig<br>
+                        Mga ingay na tayo lang dalawa nakadinig<br>
+                        Nakatawang umidlip sa kama<br>
+                        Pero ba't wala ka na pagsapit ng umaga?<br>
+
+                        Andiyan ka na naman<br>
+                        Ba't 'di ko maiwasang tumingin sa 'yong liwanag?<br>
+                        Nadarang na naman sa 'yong apoy<br>
+                        Bakit ba laging hinahayaan?<br>
+
+                        Andiyan ka na naman<br>
+                        Ba't 'di ko maiwasang tumingin sa 'yong liwanag?<br>
+                        Nadarang na naman sa 'yong apoy<br>
+                        Handang masaktan kung kinakailangan</p>
+                  </div>
+              </div>
+          
+              
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>MATERYAL</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>From 2017, this song highlights resilience and staying true to oneself.</p>
+                  <audio controls>
+                      <source src="z:\MIDTERM\New folder (2)\Shanti Dope - Materyal (lyrics) [ Full song ] [7EQytVQ0xoU].mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('materyalLyrics')">Show Lyrics</button>
+                  <div id="materyalLyrics" style="display: none;">
+                      <p>Ibibigay sa 'yo lahat ng gusto mo<br>
+                        Karangyaan, kayamanan na pwede mong hawakan<br>
+                        Dito sa ibabaw ng mundo<br>
+                        Sabi ng mapagsamantalang damdaming pansamantala<br>
+                        Na ako nga daw ay hangal dahil sa pagmamahal<br>
+                        Na 'di kayang tumbasan ng kahit na ano mang materyal<br>
+
+                        Dating nasa panaginip lang ang binibini na<br>
+                        Naging rason ng kada gising ko sa umaga<br>
+                        Kung magmahal ka, kalangita'y nagiging kama<br>
+                        Parang gabi-gabi kung makasiping ko si Darna<br>
+                        'Pag ika'y kayakap, mas lalo kong nalalaman<br>
+                        Ang ibig sabihin ng kayamanan<br>
+                        Kahit na halaga man ng pambayad, upa sa aming tahanan<br>
+                        Ay presyo lang ng nasa mesa nila tuwing agahan<br>
+                          
+                        Bagong telepono, magara na sapatusan<br>
+                        Ayon ay 'di ko maibibigay ang iyong layaw<br>
+                        'Pagkat ang kaya ko lang ay ipadama sa 'yo<br>
+                        Na laging ika-14 ng Pebrero kada araw<br>
+                        Halik mo ay hindi kayang tuldukan<br>
+                        Ng tamis na daig pananim sa tubuhan<br>
+                        'Di ka man mahandugan kahit maski pandesal<br>
+                        Pag-ibig ko ay hindi kayang tumbasan ng ano mang materyal<br>
+
+                        Ibibigay sa 'yo lahat ng gusto mo<br>
+                        Karangyaan, kayamanan na pwede mong hawakan<br>
+                        Dito sa ibabaw ng mundo<br>
+                        Sabi ng mapagsamantalang damdaming pansamantala<br>
+                        Na ako nga daw ay hangal dahil sa pagmamahal<br>
+                        Na 'di kayang tumbasan ng kahit na ano mang materyal<br>
+                      
+                        Pasensiya kung minsanan na lamang kita dalawin<br>
+                        Madalas lang talaga 'ko kailanganin do'n sa amin<br>
+                        Bakit wala kang kibo tuwing ikaw ay yayakapin?<br>
+                        Makasibat na nga, nanlalamig ka na ba sa 'kin?<br>
+                        Naku, sana 'wag naman, gustuhin ko mang agaran<br>
+                        Na dalawin kaso baka kumot mo'y nasa labahan pa<br>
+                        'Wag ka mag-alala sa aking kalagayan<br>
+                        Sa ngayon ay kaya ko nang ibigay sa 'yo ang kalawakan<br>
+
+                        Habang nakahiga't magkahawak ang kamay<br>
+                        Labi mo'y tanging sa pisngi ko lang nakalagay<br>
+                        Tawanan hanggang sa mag-umaga<br>
+                        Mapakahirapan ay kasama mo akong umaray<br>
+                        Katabi ka hanggang sa kayamanan malulong<br>
+                        Mga bagay na sana'y nagawa pa natin noon<br>
+                        Kung 'di ako nakatulog nang nagmamaneho't<br>
+                        Gisingin ng dalawang higanteng ilaw na sa 'kin pasalubong <br>
+                      
+                        bibigay sa 'yo lahat ng gusto mo<br>
+                        Karangyaan, kayamanan na pwede mong hawakan<br>
+                        Dito sa ibabaw ng mundo<br>
+                        Sabi ng mapagsamantalang damdaming pansamantala<br>
+                        Na ako nga daw ay hangal dahil sa pagmamahal<br>
+                        Na 'di kayang tumbasan ng kahit na ano mang materyal<br>
+
+                        Kung nandirito ka lang ay nasa langit na 'ko malamang<br>
+                        Kahit ang kaya ko lang iparamdam sa 'yo'y<br>
+                        Malamig na hangin, 'di ka man kayang yakapin<br>
+                        Nagawa kang tabihan nang ako lang ang may alam<br>
+                        Kung nandirito ka lang ay nasa langit na 'ko malamang<br>
+                        Kahit ang kaya ko lang iparamdam sa 'yo'y<br>
+                        Malamig na hangin, 'di ka man kayang yakapin<br>
+                        Nagawa kang tabihan nang ako lang ang may alam (may alam)<br>
+
+                        Ibibigay sa 'yo lahat ng gusto mo<br>
+                        Karangyaan, kayamanan na pwede mong hawakan<br>
+                        Dito sa ibabaw ng mundo<br>
+                        Sabi ng mapagsamantalang damdaming pansamantala<br>
+                        Na ako nga daw ay hangal dahil sa pagmamahal<br>
+                        Na 'di kayang tumbasan ng kahit na ano mang materyal<br>
+                        </p>
+                  </div>
+              </div>
+          
+              
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>MAU</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>A 2017 classic showcasing Shanti Dope's lyrical prowess.</p>
+                  <audio controls>
+                      <source src="z:\MIDTERM\New folder (2)\Shanti Dope - Mau feat. PutapettyWap ( prod. by Klumcee )-yt.savetube.me.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('mauLyrics')">Show Lyrics</button>
+                  <div id="mauLyrics" style="display: none;">
+                      <p>Unang gabi niya ko nakasama pagngiti<br>
+                        Sabi niya madami ka'ng babae oy hindi ah<br>
+                        Kasi sa ngayon ikaw ang gusto kong makita<br>
+                        Habang merong alak saking baso'ng malamig ah<br>
+                        
+                        Masaya pero pano kung wala ko'ng kaya<br>
+                        Tulad ng kasama mo'ng iba<br>
+                        'Wag ka padin sana mawala<br>
+                      
+                        Yung larawan mo tumatakbo hanggang sa panaginip<br>
+                        Alaala na naglalaro sa malikot na isip<br>
+                        May ibang nasa harap na<br>
+                        Ba't ikaw ang madalas naaalala pag wasak na'ko<br>
+                        Pwede bang sakin ka nalang ma<br>
+                      
+                        Sana 'wag ka magsasawang maalala<br>
+                        Kung ano yung ating nagawa sa<br>
+                        Unang araw mo ko nakilala\<br>
+                      
+                        Pag kasama ko si Hellmerry<br>
+                        May kasama siyang isang bestie<br>
+                        Madalas tatlo kapag ready<br>
+                        Yung iba sabog lahat sexy<br>
+                        Yung isa na mas matanda pa sakin pero may dala-dala'ng candy<br>
+                        Nung ikaw kasama ang safe nasabi ko'ng sakin ka nalang baby
+                        <br>
+                        Unang gabi niya 'ko nakasama pagngiti<br>
+                        Nasabi niya madami ka'ng babae oy hidi ah<br>
+                        Kasi sa ngayon ikaw ang gusto ko makita<br>
+                        Habang merong alak saking baso'ng malamig ah<br>
+                      
+                        Sa isip mo lagi ako'ng may iba<br>
+                        Sa mga gabi'ng ako lang mag isa<br>
+                        Habang hindi ko padin malimutan<br>
+                        Na mas masaya kapag katabi ka<br>
+                        Ano man'g mangyare't maraming gawain tumawag ka lang ako'y parating na<br>
+                        Mundo'ng magulo na to natatakasan ko lamang sa kada kasama kita<br>
+                      
+                        Dami nilang sinasabi<br>
+                        Pero mas maniwala ka saken<br>
+                        Kasi nga iba na ko sa dati<br>
+                        Nung ikaw na kasama ko lagi<br>
+                        O kailangan kita di ko kaya gawin to ng ako lang din kung sakali<br>
+                        Kahit nakakapagod na din pumapawi kapag kagat mo ko sa labi<br>
+                      
+                        Magulo nakaraan ko di masabi sa harap mo<br>
+                        Andyan ka na isang tawag lang sayo'ng kama nabilanggo<br>
+                        Medyo bago lang lahat sakin parang di ako sanay sa ganto<br>
+                        Kasi kahit parang kaibigan lang kita ikaw na yung mahal ko<br>
+                      
+                        Masaya pero pano kung wala ko'ng kaya<br>
+                        Tulad ng kasama mo'ng iba<br>
+                        Wag ka pa din sana mawala<br>
+                        Yung larawan mo tumatakbo hanggang sa panaginip</p>
+                  </div>
+              </div>
+              <script>
+                window.onload = function() {
+                  document.querySelectorAll('.like-btn').forEach(button => {
+                    button.addEventListener('click', () => {
+                      button.classList.toggle('liked');
+                      button.textContent = button.classList.contains('liked') ? "♥ Liked" : "♡ Like";
+                    });
+                  });
+                };
+              </script>
+              
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                <h2>KAMUSTA</h2>
+                <h3>ARTIST: SHANTI DOPE</h3>
+                <p>A heartfelt track from 2022 greeting listeners with raw emotion.</p>
+                <audio controls>
+                    <source src="z:\MIDTERM\New folder (2)\Shanti Dope - Materyal (lyrics) [ Full song ]-yt.savetube.me.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <button onclick="toggleLyrics('kamustaLyrics')">Show Lyrics</button>
+                <div id="kamustaLyrics" style="display: none;">
+                  <p>
+                    [Verse 1] Kamusta? Kamusta!<br>
+                    Paano na ang mga pangarap?<br>
+                    Sa gitna ng dilim, liwanag ay sumisikat.<br><br>
+                    
+                    [Chorus] Kamusta, kamusta, sigaw ng puso sa hangin,<br>
+                    Bawat tibok ay may kwento ng pag-asa't damdamin.<br>
+                    Yo-yo-yo-yo-young God<br>
+                    (Hello?)<br>
+                    Kamusta ka? Sana ayos lang<br>
+                    Lagi lang akong nand'yan, kaso lang,<br>
+                     ang damot ng bibig<br>
+                    Para sa'n pa kung handa 'kong makinig?<br>
+                    'Pag gipit, kung sa sarili mo,<br>
+                     masyado kang bilib<br>
+                    Mahihirapan ka lang nang mahihirapan<br>
+                    Kung ipipilit mong wala kang kahinaan<br>
+                    Kadalasan, alak pa ang mas pinipili mong sandalan<br>
+                    'Di ka masaya, nanghihiram ka lang ng tapang<br>
+                    Dama ko na may kinikimkim na hirap ka na rin tiisin<br>
+                    Kaso nasanay kang pinapakita na lahat<br>
+                     ay kaya mo ring panisin<br>
+                    'Di ka takot matulungan,<br>
+                     kung tutuusin, <br>
+                     takot ka lang na tuksuhin<br>
+                    Kaya 'di masagot kada tatanungin<br>
+                     kung mayro'n bang nakakubli<br>
+                    Mayro'n bang nakakubli sa <br>
+                    likod ng 'yong ngiti<br>
+                    At kutitap ng iyong mga mata?<br>
+                    Mabigat ba sa dibdib 'pag laging pinipigilang<br>
+                    Sabihin ang iyong nadarama?<br>
+                    'Di mo gustong malaman ng mundo<br>
+                    Ang kahinaan mo<br>
+                    Kung wala kang malapitan (oh-oh, whoa)<br>
+                    Pupwede mo akong sabihan (oh-oh, whoa)<br>
+                    Pero para makuha 'yung sa 'kin, mabuhay,<br>
+                     ang dami nang kasalanang nagawa<br>
+                    Hindi ko na nga mapagkatiwalaan sarili<br>
+                     pa'nong ikaw pa kaya?<br>
+                    Hindi madama 'yung lungkot o saya,<br>
+                     nagtataka lang,<br>
+                     bakit may hininga pa 'ko?<br>
+                    Baka gumaan pa bigat ng dala <br>
+                    'pag wala, tulad ng kung ano'ng bago<br>
+                    Habang 'yung katinuan, nakakadena <br>
+                    sa alak, usok at tableta<br>
+                    Sa napalang mapait, tatakasan saglit,<br>
+                     pagbalik, gano'n pa din eksena, huh<br>
+                    Kulong sa sistema<br>
+                    parang malaya sa laki ng selda<br>
+                    Kulang na nga lang, ipako sa<br>
+                     krus sa dami ng hudas para sa pera<br>
+                    Katulad nilang gusto <br>
+                    pa 'ko masira, kahinaan 'di ko maipakita<br>
+                    Layo ng gusto ko pa marating <br>
+                    na naliligaw din 'pag walang gasolina<br>
+                    Kanina ay nasa dulo ng <br>
+                    bangin, lason sa hangin, sarap damahin<br>
+                    May lubid sa puno, sinabit <br>
+                    daliri ko sa 'king baril bago kalabitin<br>
+                    Mayro'n bang nakakubli sa likod ng 'yong ngiti<br>
+                    At kutitap ng iyong mga mata?<br>
+                    Mabigat ba sa dibdib 'pag laging pinipigilang<br>
+                    Sabihin ang iyong nadarama?<br>
+                    'Di mo gustong malaman ng mundo<br>
+                    Ang kahinaan mo<br>
+                    Kung wala kang malapitan (oh-oh, whoa)<br>
+                    Pupwede mo akong sabihan (oh-oh, whoa)<br>
+                    Buhay n'ya na hiniram ay<br>
+                     kinuha pa n'ya nang hindi nagpaalam<br>
+                    Sa mga kaibigang nakatawanan, <br>
+                    sa dami ng 'di n'ya gustong naranasan<br>
+                    Sa mga huling hininga n'ya <br>
+                    na lang inasahan mahanap ang kapayapaan<br>
+                    Hirap manalo 'pag nasa loob <br>
+                    ng isipan ang pinakanaging kalaban, uh<br>
+                    Mayro'n bang dapat sisihin?<br>
+                     Paligid, sarili, mundong magulo<br>
+                    Hindi ko alam kung kanino ba <br>
+                    dapat ituro 'yung dulo ng hintuturo<br>
+                    Alam mong hindi ka makakalimutan,<br>
+                     hinaharap, nagawang talikuran<br>
+                    Kinakausap ka habang nasa l<br>
+                    ikod ng salaming may saradong pintuan<br>
+                    Malapit ka nang bumigay, dama ko,<br>
+                     'wag ka magmadaling maabo<br>
+                    Magkakaasawa ka pa at magkakaanak<br>
+                     ka pa hanggang sa magkaapo<br>
+                    Kapag ganitong-ganito, 'yung wala ka,<br>
+                     abot na abot ko kung ba't ka lito<br>
+                    Tadhana ang palabiro, pagsubok ang pampatino<br>
+                    Buhay, parang biyahe, maraming hadlang<br>
+                    Ikaw na bahala kung pa'no mo sasakyan<br>
+                    Natural lamang na mabigatan<br>
+                     kaya hanapin ang pampagaan<br>
+                    'Yan ang paraan, kasama 'yan,<br>
+                    'wag mag-alala kung mayro'n bang nakakubli<br>
+                    Mayro'n bang nakakubli sa likod ng 'yong ngiti<br>
+                    At kutitap ng iyong mga mata?<br>
+                    Mabigat ba sa dibdib 'pag laging pinipigilang<br>
+                    Sabihin ang iyong nadarama?<br>
+                    'Di mo gustong malaman ng mundo<br>
+                    Ang kahinaan mo<br>
+                    Kung wala kang malapitan (oh-oh, whoa)<br>
+                    Pupwede mo akong sabihan (oh-oh, whoa)<br>
+                    Mayro'n bang nakakubli sa likod ng 'yong ngiti<br>
+                    At kutitap ng iyong mga mata?<br>
+                    Mabigat ba sa dibdib 'pag laging pinipigilang<br>
+                    Sabihin ang iyong nadarama?<br>
+                    'Di mo gustong malaman ng mundo<br>
+                    Ang kahinaan mo<br>
+                    Kung wala kang malapitan (oh-oh, whoa)<br>
+                    Pupwede mo akong sabihan (oh-oh, whoa)<br>
+                  </p>
+                </div>
+              </div>
+              
+              <script>
+                function toggleLyrics(id) {
+                  var lyricsDiv = document.getElementById(id);
+                  lyricsDiv.style.display = (lyricsDiv.style.display === "none" || lyricsDiv.style.display === "") ? "block" : "none";
+                }
+              </script>
+              
+              
+          
+             
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>DRXG$</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>A powerful 2024 release exploring life's experiences and complexities.</p>
+                  <audio controls>
+                      <source src="z:\MIDTERM\New folder (2)\Shanti Dope - Drxg$ (Official Lyric Video)-yt.savetube.me.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('drxgsLyrics')">Show Lyrics</button>
+                  <div id="drxgsLyrics" style="display: none;">
+                      <p>Para 'di ko na isipin yung ibang problema ko<br>
+                        Laging droga 'yung nilalagay ko sa sistema ko<br>
+                        Habang 'kala ng iba ay madali maging ako<br>
+                        Laging coca at damo nakalagay sa mesa ko<br>
+
+                        Gagawin ko 'to hangga't may nakukuha na milyon<br>
+                        Kalimutan buong gang hindi ko kayang gawin 'yon<br>
+                        Kung hindi ako nag-rap nasa kalsada 'ko ngayon<br>
+                        Ilang beses ko na tinanong sa Diyos kung ba't gano'n<br>
+
+                        Umaasang matulungan nung wala kong matulugan<br>
+                        Masarap na buhay nung panahon no'n may kalayuan<br>
+                        Nagtulak din ako no'n nung mura lang 'yung pagkukunan<br>
+                        Gusto ko nang lumaya ibang tropa sa kulungan<br>
+                      
+                        Kaya hindi ko maiwasan na tawagan na 'yung plug<br>
+                        Nakalatag 'yung cocaine at nung ginamit ko basag<br>
+                        Nag-ipon ako ng pera pinaikot dumagdag<br>
+                        Nung nakuha ko 'yung pera pinangkuha ko ng drugs<br>
+
+                        Kasi nagloko 'yung nobya ko namatay yung tropa ko<br>
+                        Nang dahil sa kalsadang 'to ayoko ng gan'to ako<br>
+                        Si mama ko tinatanong kung para sa'n 'yung droga ko<br>
+                        Gusto ko lang din na makalimutan na 'yung trauma ko<br>
+
+                        Ilang kilo na siguro 'yung nasindihang damo<br>
+                        'Di ko na inaasahang maintindihan ako<br>
+                        'Yung babae niya gusto na mapagsilbihan ako<br>
+                        Dinala ko siya sa bahay nung natindihan ako<br>
+                      
+                        Yung droga pera na madami sa'kin lumalapit lagi<br>
+                        'Di ko matanggihan kasi wala 'kong gan'to dati<br>
+                        Tatlong babae 'yung kasama napasobra<br>
+
+                        Ang lakas ng tama ko sa ecstasy at coca<br>
+                        Ang lakas ng tama ng babae nambobola<br>
+                        Parang gusto ko na siya tirahin walang goma<br>
+                        Mogadon at coca 'pag naghalo parang bomba<br>
+                        'Di ko maiwasan lalo 'pag kasama tropa<br>
+
+                        Kaya hindi ko maiwasan na tawagan na 'yung plug<br>
+                        Nakalatag 'yung cocaine at nung ginamit ko basag<br>
+                        Nag-ipon ako ng pera pinaikot dumagdag<br>
+                        Nung nakuha ko 'yung pera pinangkuha ko ng drugs<br>
+                        <br>
+                        Kasi nagloko 'yung nobya ko namatay yung tropa ko<br>
+                        Nang dahil sa kalsadang 'to ayoko ng gan'to ako<br>
+                        Si mama ko tinatanong kung para sa'n 'yung droga ko<br>
+                        <br>
+                        Gusto ko lang din na makalimutan na 'yung trauma ko<br>
+                        Ilang kilo na siguro 'yung nasindihang damo<br>
+                        'Di ko na inaasahang maintindihan ako<br>
+                        'Yung babae niya gusto na mapagsilbihan ako<br>
+                        Dinala ko siya sa bahay nung natindihan ako<br>
+                        <br>
+                        Lageng hindi ko maiwasan na tawagan na 'yung plug<br>
+                        Nakalatag 'yung cocaine at nung ginamit ko basag<br>
+                        Nag-ipon ako ng pera pinaikot dumagdag<br>
+                        Nung nakuha ko 'yung pera pinangkuha ko ng drugs<br>
+                        <br>
+                        Kasi nagloko 'yung nobya ko namatay yung tropa ko<br>
+                        Nang dahil sa kalsadang 'to ayoko ng gan'to ako<br>
+                        Si mama ko tinatanong kung para sa'n 'yung droga ko<br>
+                        Gusto ko lang din na makalimutan na 'yung trauma ko<br>
+                        Ilang kilo na siguro 'yung nasindihang damo<br>
+                        'Di ko na inaasahang maintindihan ako<br>
+                        'Yung babae niya gusto na mapagsilbihan ako<br>
+                        Dinala ko siya sa bahay nung natindihan ako<br>
+                        Lageng hindi ko maiwasan na tawagan na 'yung plug<br>
+                        Nakalatag 'yung cocaine at nung ginamit ko basag<br>
+                        Nag-ipon ako ng pera pinaikot dumagdag<br>
+                        Nung nakuha ko 'yung pera pinangkuha ko ng drugs</p><br>
+                  </div>
+              </div>
+          
+              
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>TRICKS</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>A 2022 catchy tune with clever twists and rhythms.</p>
+                  <audio controls>
+                      <source src="z:\MIDTERM\New folder (2)\Shanti Dope - Tricks (Official Music Video)-yt.savetube.me.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('tricksLyrics')">Show Lyrics</button>
+                  <div id="tricksLyrics" style="display: none;">
+                      <p>So many hoes wanna go play tricks on me (on me)<br>
+                        So many hoes wanna go play tricks on me (on me)<br>
+
+                        Mga batang panginoon na naglalaro lang<br>
+                        Sa bandang alapaap ang kasama ko lumutang<br>
+                        Nasabi din ng ate niya sa katawan ko muna<br>
+                        Dadaan 'yung alak kung gusto ko rin magkainuman<br>
+
+                        Mga ilaw sa dilim sa mata ko nakatingin<br>
+                        Sagot ng chickas na kanina ko pa gusto tanungin<br>
+                        Kung ano pangalan ng kasama niyang panalo rin<br>
+                        At no'ng inaya ko sumama nabanggit niya ako din<br>
+                      
+                        'Di niya pa 'ko kakilala sumama siya kaagad<br>
+                        Narinig niya lang na mga kasama ko'y young god<br>
+                        Mga damit lang nila 'yung sa sahig nakakalat<br>
+                        Habang sa kama niya lang kayang hindi magpaawat<br>
+
+                        Halata ko na sanay na sanay siya umamat<br>
+                        Ramdam ko siya sa reyalidad niyang tinatakasan<br>
+                        Ang sabi niya sa akin 'di ka para sa kalsada<br>
+                        Kahit na halata mong pinalaki ka ng gangsta<br>
+
+                        Parang si Rihanna babae pero hustla<br>
+                        Ayaw mo sa drama gusto mo sa gangsta<br>
+                        Hindi ako gano'n pero tayo 'yung magkasama<br>
+                        Sa mga panahong wala kang katabi sa kama<br>
+                      
+                        Sa dami ng pagsubok na ayokong maalala<br>
+                        Dito muna tayo sa ngayon ako bahala<br>
+                        Kung natatakot ka na muna magmahal uh<br>
+                        Pareho tayo 'wag ka mag-aalala ha<br>
+
+                        Habang sa sarili lang kung sa'n ako nakadepende<br>
+                        Ang hirap maniwalang dito 'ko nakarating yeah<br>
+                        Sa daming pinakita sa 'kin sa edad na bente<br>
+                        Ng karanasan nang sa puso ko nagpalamig<br>
+                        Sa kanya lang basta may amat na kaya dalhin<br>
+                        May bayad o wala gusto niya 'ko pasayahin<br>
+
+                        At kapag umikot paningin ko sa balakang niya 'tsaka dede<br>
+                        Mas gagalingan niya pa sumayaw para sa gang<br>
+                        May dala siyang 'di mahina nilagay niya sa 'king dila<br>
+                        Ang tagal naman ng tama gumagana ba 'to 'di nga<br>
+                        No'ng gumana tinanong ko 'yung barkada niya balita<br>
+                        Sagot niya lang mas guwapo ka sa personal makita<br>
+<br>
+                        Bigla 'kong namanhid ta's wala na siyang damit<br>
+                        Hinimay 'yung malagkit ayon sabog kami ulit<br>
+                        Pandiinang Pilipinang mambabae din ang trip<br>
+                        O dalagitang malandi ang kahalikan niya na bitch<br>
+                      
+                        Parang si Rihanna babae pero hustla'<br>
+                        Ayaw mo sa drama gusto mo sa gangsta<br>
+                        Hindi ako gano'n pero tayo 'yung magkasama<br>
+                        Sa mga panahong wala kang katabi sa kama<br>
+
+                        Sa dami ng pagsubok na ayokong maalala<br>
+                        Dito muna tayo sa ngayon ako bahala<br>
+                        Kung natatakot ka na muna magmahal uh<br>
+                        Pareho tayo 'wag ka mag-aalala ha<br>
+
+                        So many hoes wanna go play tricks on me (on me)<br>
+                        You can put the blame on me (on me)<br>
+                        Yeah I make 'em say<br>
+                        Oh what a night oh what a night oh what a night<br>
+                        Oh what a night oh what a night oh what a night<br>
+
+                        Parang si Rihanna babae pero hustla'<br>
+                        Ayaw mo sa drama gusto mo sa gangsta<br>
+                        Hindi ako gano'n pero tayo 'yung magkasama<br>
+                        Sa mga panahong wala kang katabi sa kama<br>
+
+                        Sa dami ng pagsubok na ayokong maalala<br>
+                        Dito muna tayo sa ngayon ako bahala<br>
+                        Kung natatakot ka na muna magmahal uh<br>
+                        Pareho tayo 'wag ka mag-aalala ha</p>
+                  </div>
+              </div>
+          
+              
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>BAD TYPE</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>Released in 2023, a bold track with intense energy.</p>
+                  <audio controls>
+                      <source src="z:\MIDTERM\New folder (2)\Shanti Dope - Bad Type (Official Lyric Video)-yt.savetube.me.mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('badTypeLyrics')">Show Lyrics</button>
+                  <div id="badTypeLyrics" style="display: none;">
+                      <p>Oh<br>
+                        Oh<br>
+                        Oh<br>
+                        She fell in love with the bad type (oh bad type)<br>
+                        She 'bout that life (oh)<br>
+                        Dance with the devil pedal to the floor<br>
+                        Livin' in the fast life fast life (oh)<br>
+                        She fell in love with the bad type (oh bad type)<br>
+
+                        She 'bout that life (oh)<br>
+                        Dance with the devil pedal to the floor<br>
+                        Livin' in the fast life fast life (oh)<br>
+
+                        Siya yung tipo ng babae na kakaiba<br>
+                        'Di mo pwedeng buklatin ang mga pahina<br>
+                        Kahit na wala sa byahe lagi niyang pinapainit ang dala kong makina<br>
+                        'Di uubra ang mga mahika matatamis mo na salita<br>
+                        Ano ba ang 'yong gusto pero 'eto lang sabi nya<br>
+                        Sabi niya sa'kin young Gaddy I don't care about your money<br>
+                        Simutin mo lang palagi ang dala-dala kong honey honey<br>
+                      
+                        She fell in love with thе bad type (oh bad type)<br>
+                        She 'bout that life (oh that life)<br>
+                        Dancе with the devil pedal to the floor<br>
+                        Livin' in the fast life fast life<br>
+
+                        She fell in love with the bad type (oh)<br>
+                        She 'bout that life (oh)<br>
+                        Dance with the devil pedal to the floor<br>
+                        Livin' in the fast life fast life<br>
+
+                        Yung mga tulak sa'min si Tupac tingin sa'kin<br>
+                        Kahit anong mangyari 'yung pera kukuhanin<br>
+                        Gusto ko na makaalis kung sa'n ako nanggaling<br>
+                        Gusto kalimutan 'yung ibang nangyari sa'kin<br>
+
+                        Yung sabi ko sa tropa mag-ingat ka palagi<br>
+                        'Wag ka pagpapahuli sa pulis kung maaari<br>
+                        Sa kalsadang hawak namin wala kang babatain<br>
+                        Na kapag napasama ka dito 'di ka bubuhayin<br>
+                        Yung pangalan namin umiinit dun sa feds<br>
+                        Yung mga babae nag-iinit dun sa bed<br>
+                        Madaming dough kaya gumagawa ng breads<br>
+                        Legendary kahit na hindi pa deds<br>
+                      
+                        She fell in love with the bad type (oh bad type)<br>
+                        She 'bout that life (oh that life)<br>
+                        Dance with the devil pedal to the floor<br>
+                        Livin' in the fast life fast life<br>
+                        
+                        She fell in love with the bad type (oh bad type)<br>
+                        She 'bout that life (oh that life)<br>
+                        Dance with the devil pedal to the floor<br>
+                        Livin' in the fast life fast life<br>
+                        Yung pangalan namin umiinit dun sa feds<br>
+
+                       Yung mga babae nag-iinit dun sa bed<br>
+                        Madaming dough kaya gumagawa ng breads<br>
+                        Legendary kahit na hindi pa deds<br>
+
+                        Yung pangalan namin umiinit dun sa feds<br>
+                        Yung mga babae nag-iinit dun sa bed<br>
+                        Madaming dough kaya gumagawa ng breads<br>
+                        Legendary kahit na hindi pa deds<br>
+                        </p>
+                  </div>
+              </div>
+          
+              
+              <div class="song"><button class="like-btn">♡ Like</button>
+
+                  <h2>NOREM</h2>
+                  <h3>ARTIST: SHANTI DOPE</h3>
+                  <p>A 2017 release that stands out with its unique style.</p>
+                  <audio controls>
+                      <source src="z:\PICS AND VID\Gloc-9 ft. J.Kris, Abaddon, Shanti Dope - Norem (Official Music Video) [JyukE1hPARU].mp3" type="audio/mpeg">
+                      Your browser does not support the audio element.
+                  </audio>
+                  <button onclick="toggleLyrics('noremLyrics')">Show Lyrics</button>
+                  <div id="noremLyrics" style="display: none;">
+                      <p>Dami ng gustong kumuha<br>
+                        D'yan na lang sa may bangketa<br>
+                        Para 'di masyadong kita<br>
+                        Ng mabenta ko'ng paninda ko, oh-oh, oh-oh<br>
+                        Ano ba 'to? Oh-oh, oh-oh<br>
+                        Binebenta ko, oh-oh, oh-oh<br>
+                        Pano ba 'to? oh-oh, oh-oh<br>
+                        Ako lang ang meron nito<br>
+                      
+                        Alas dose, hating gabi<br>
+                        Pwedeng pa-gramo-gramo kung gusto bumili<br>
+                        Abutan ng bayad sa may tabi-tabi<br>
+                        Ingat lang dahil baka may makasalisi<br>
+                        Makinig sa istorya, do'n sa may Divisoria<br>
+                        Alamin ang lahat tungkol sa anak ni Aling Gloria<br>
+                        Palagi nasa lansangan kahit na maalinsangan<br>
+                        'Di siya nag-aalinlangan basta't tamang bentahan<br>
+                        Kaya ingat lang sa kapkapan baka magkabakbakan<br>
+                        May bakal ka ba na dala na katulad nila sinubukang lumaban<br>
+                        'Wag niyo akong tutularan sa tabi ng kaniyang pangalan<br>
+                        May dugo na namang bumaha sa daan na kailangang punasan<br>
+                        Kailan kaya matututo, 'wag matigas iyong ulo<br>
+                        'Di nakuntento sa porsyento, dividendo kilo-kilo<br>
+                        Napariwara na ba ay ilan, sagot laging tanong ay kailan<br>
+                        Ilan pa bang buhay ang dapat masira't kailangang hanguin sa putikan<br>
+                        
+                        Paninda ko, oh-oh, oh-oh<br>
+                        Ano ba 'to? Oh-oh, oh-oh<br>
+                        Binebenta ko, oh-oh, oh-oh<br>
+                        Pano ba 'to? Oh-oh, oh-oh<br>
+                        Ako lang ang meron nito<br>
+                      
+                        Ako na lang ang meron, wala na dito sa'min<br>
+                        Mga isdang kasabaya'y naprito na't nadaing<br>
+                        Sistemang mapanlamon, ang dami kong inihain<br>
+                        Handa 'kong mamatay dahil may dapat na buhayin<br>
+                        Pamilyang umaasang matulungan sila<br>
+                        Buo kong nilunok ang kaba kahit maputol ang paghinga<br>
+                        'Di pwedeng ako'y makulong lalaban ako kahit mag-isa<br>
+                        Sabog ulo man o palit ulo kahit pa magturo ng iba<br>
+                        Nakulong na si kosa, nanlaban na si tropa<br>
+                        Pasensya na kayo, kailangang maabot ang kota<br>
+                        Para 'to sa pang-suporta, wala nang makakakontra<br>
+                        Trabaho lang, walang personalan, bago lumayo ng sobra<br>
+                        Sa espadahan ng sungay, kailangan ikaw ay mahusay<br>
+                        Kailangang masigurado ko ang kinabukasan ng aking pamilya bago humandusay<br>
+                        'La akong pakialam kung marami na nabiktima at nahulog sa hukay<br>
+                        Mga ilang kilo na lang ay titigil na din ako sa ganitong hanapbuhay<br>
+                      
+                        Tropang gising tropang gising tropang gising sing<br>
+                        Mga praning mga praning mga praning ning<br>
+                        Laging gising laging gising laging gising sing<br>
+                        Mga praning mga praning mga praning ning<br>
+                      
+                        "Gusto ko na talagang magbagong buhay<br>
+                        Kasi lumalaki na 'yung mga anak ko"<br>
+                        
+                        Mamang nakaputi, pwede ka bang lumingon? (Uh)<br>
+                        'Nong tinda mo sa'yong munting kariton?<br>
+                        Ang bibig ko'y tikom lang kita'y lalago<br>
+                        Basta may libreng tikim sa iyong nilalako<br>
+                        Sabi ko noon kay inay, kaya ko na pong mag-isa<br>
+                        Sa pagbabalik ko ultimo sa mga ngipin ko'y walang natira<br>
+                        Sa kada pagpikit ko nagtatanong sa sarili nang maiba<br>
+                        Papa'no kung maaga ko dapat asahan ang aking mabatong lapida, kaya<br>
+                        Kahit na 'ko'y dilat, hirap manalamin kung kaninong bungo 'yung kaharap ko sa salamin<br>
+                        Pero kahit madalas mapraning, bihasang-bihasa na 'to pagdating<br>
+                        Sa galawan ako lamang ang tanging biktima at ang salarin<br>
+                        Pinugad ang kagipitan, salapi't kaibigan<br>
+                        Habang buhay dinala, kasiyahan na panandalian<br>
+                        Mundong nilasap ko nang matagal kahit pa sabik pa 'kong iwan<br>
+                        Kaso sa huli, rehas at libingan lamang ang pwede kong pagpilian<br>
+                      
+                        Dami ng gustong kumuha<br>
+                        Dyan na lang sa may bangketa<br>
+                        Para 'di masyadong kita<br>
+                        Ng mabenta ko'ng paninda ko, oh-oh, oh-oh<br>
+                        Ano ba 'to? Oh-oh, oh-oh<br>
+                        Binebenta ko, oh-oh, oh-oh<br>
+                        Pano ba 'to? oh-oh, oh-oh<br>
+                        Ako lang ang meron nito<br>
+                      
+                        Ako lang ang meron nito<br>
+                        Ako lang ang meron nito</p>
+                  </div>
+              </div>
+          </div>
+          
+         
+<button class="favorite-btn" style="background: transparent; border: none; font-size: 20px; cursor: pointer;">
+    <span>&#9825;</span> >
+  </button>
+  
+       
+          
+
+  
+    
+          <a href="https://www.instagram.com" target="_blank" style="margin: 0 15px; color: white; font-size: 24px;">
+              <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com" target="_blank" style="margin: 0 15px; color: white; font-size: 24px;">
+              <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.youtube.com" target="_blank" style="margin: 0 15px; color: white; font-size: 24px;">
+              <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.tiktok.com" target="_blank" style="margin: 0 15px; color: white; font-size: 24px;">
+              <i class="fab fa-tiktok"></i>
+          </a>
+      </div>
+      <p style="text-align: center; margin: 10px 0; font-size: 14px; color: #aaa;">
+          &copy; 2025 Shanti Dope Playlist | All rights reserved.
+      </p>
+  </footer>
+  
+</body>
+</html>
